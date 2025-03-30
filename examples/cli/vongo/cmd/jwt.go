@@ -21,8 +21,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/vonage/vonage-go-sdk/jwt"
 	"github.com/spf13/cobra"
+	"github.com/vonage/vonage-go-sdk/jwt"
 )
 
 // jwtCmd represents the jwt command

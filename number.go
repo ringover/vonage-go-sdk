@@ -242,6 +242,11 @@ func (client *NumbersClient) Buy(country string, msisdn string, opts NumberBuyOp
 	}
 
 	result, resp, err := numbersClient.DefaultApi.BuyANumber(ctx, country, msisdn, &numbersBuyOpts)
+
+	if err != nil {
+		return NumbersResponse{}, NumbersErrorResponse{}, err
+	}
+
 	// check for non-200 status codes first, err will be set but we handle these specifically
 	if resp.StatusCode != 200 {
 		// handle a 4xx error
@@ -256,10 +261,6 @@ func (client *NumbersClient) Buy(country string, msisdn string, opts NumberBuyOp
 			}
 			return NumbersResponse(result), errResp, nil
 		}
-	}
-
-	if err != nil {
-		return NumbersResponse{}, NumbersErrorResponse{}, err
 	}
 
 	return NumbersResponse(result), NumbersErrorResponse{}, nil
@@ -286,6 +287,11 @@ func (client *NumbersClient) Cancel(country string, msisdn string, opts NumberCa
 	}
 
 	result, resp, err := numbersClient.DefaultApi.CancelANumber(ctx, country, msisdn, &numbersCancelOpts)
+
+	if err != nil {
+		return NumbersResponse{}, NumbersErrorResponse{}, err
+	}
+
 	if resp.StatusCode != 200 {
 		// handle a 4xx error
 		e := err.(number.GenericOpenAPIError)
@@ -300,10 +306,6 @@ func (client *NumbersClient) Cancel(country string, msisdn string, opts NumberCa
 			}
 			return NumbersResponse(result), errResp, nil
 		}
-	}
-
-	if err != nil {
-		return NumbersResponse{}, NumbersErrorResponse{}, err
 	}
 
 	return NumbersResponse(result), NumbersErrorResponse{}, nil
