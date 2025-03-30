@@ -5,7 +5,7 @@
 package vonage
 
 import (
-	"github.com/vonage/vonage-go-sdk/jwt"
+	"github.com/ringover/vonage-go-sdk/jwt"
 )
 
 // Auth types are various but support a common interface

@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 
 	"github.com/antihax/optional"
-	"github.com/vonage/vonage-go-sdk/internal/application"
+	"github.com/ringover/vonage-go-sdk/internal/application"
 )
 
 // ApplicationClient for working with the Application API

@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/jarcoal/httpmock"
-	"github.com/vonage/vonage-go-sdk/ncco"
+	"github.com/ringover/vonage-go-sdk/ncco"
 )
 
 func TestVoiceNewClient(*testing.T) {

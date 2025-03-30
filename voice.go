@@ -6,8 +6,8 @@ import (
 	"errors"
 
 	"github.com/antihax/optional"
-	"github.com/vonage/vonage-go-sdk/internal/voice"
-	"github.com/vonage/vonage-go-sdk/ncco"
+	"github.com/ringover/vonage-go-sdk/internal/voice"
+	"github.com/ringover/vonage-go-sdk/ncco"
 )
 
 // VoiceClient for working with the Voice API
